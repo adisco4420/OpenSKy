@@ -2,3 +2,6 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 html,body{height:100%;margin:0;padding:0;}
 body{}
+.text-danger{
+    color: rgb(228, 52, 52);
+}

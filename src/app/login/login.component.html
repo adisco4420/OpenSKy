@@ -11,19 +11,28 @@
     <mat-card class="box">
       <mat-card-header>
         <mat-card-title>Log in</mat-card-title>
+        <p class="text-danger" *ngIf="errMsg">username or password is incorrect</p>
       </mat-card-header>
   
-      <form class="example-form">
+      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()" >
         <mat-card-content>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username">
+            <input  formControlName="username" matInput placeholder="Username">
+            <small class="text-danger" *ngIf="loginForm.controls.username.touched && loginForm.controls.username.invalid">
+              username is required*
+            </small>
           </mat-form-field>
   
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Password">
+            <input formControlName="password" matInput placeholder="Password" type="password">
+            <small class="text-danger" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+              username is required*
+            </small>
           </mat-form-field>
         </mat-card-content>
-        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        <button mat-stroked-button color="accent" class="btn-block">
+          Log in 
+        </button>
       </form>
     </mat-card>
   
