@@ -9,13 +9,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent, } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FligtModalComponent } from './fligt-modal/fligt-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    FligtModalComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +27,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AngularMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
+  entryComponents: [FligtModalComponent],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
