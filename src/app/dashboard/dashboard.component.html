@@ -1,3 +1,23 @@
-<p>
-  dashboard works!
-</p>
+<mat-toolbar color="primary" class="app-header">
+  <div>OpenSky</div>
+</mat-toolbar>
+<div class="container">
+
+  <mat-grid-list cols="4" class="is-clickable" >
+    <mat-grid-tile (click)="open(airport)" *ngFor="let airport of airportList">
+      <mat-card class="example-card">
+      <!-- <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      </mat-card-header> -->
+      <img mat-card-image height="230px" width="100%" [src]="airport.img" alt="Photo of a Shiba Inu">
+      <mat-card-content class="text-center">
+        <h3 >{{airport.name}}</h3>
+      </mat-card-content>
+    </mat-card></mat-grid-tile>
+  </mat-grid-list>
+</div> 
+
+<dialog-data-example>
+</dialog-data-example>
