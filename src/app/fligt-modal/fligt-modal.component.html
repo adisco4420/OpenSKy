@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{airportName}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="arrivalList && departureList; else loading">
+    <mat-form-field>
+      <mat-label>Select Minutes</mat-label>
+      <mat-select [(ngModel)]="selectedMinutes">
+        <mat-option>None</mat-option>
+        <mat-option value="60">60 Minutes</mat-option>
+        <mat-option value="120">120 Minutes</mat-option>
+        <mat-option value="180">180 Minutes</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h3><b>Departing flights in the last {{selectedMinutes}}-minutes</b></h3>
+    <div *ngFor="let departure of departureList.slice(0, 5)">
+      <p>ICAO No - {{departure.icao24}}, Flight - {{departure.callsign}}, Arrival Airport - {{departure.estArrivalAirport}}</p>
+    </div>
+  
+    <h3><b>Arriving flights in the last {{selectedMinutes}}-minutes</b></h3>
+    <div *ngFor="let arrival of arrivalList.slice(0, 5)">
+      <p>ICAO No - {{arrival.icao24}}, Flight - {{arrival.callsign}}, Departure Airport - {{arrival.estDepartureAirport}}</p>
+    </div>
+  
+  </div>
+  <ng-template #loading>
+    <h5>Loading Data...</h5>
+  </ng-template>
+  <div *ngIf="errMsg">
+    <p class="text-danger text-center">Error Occured Try Again!</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
