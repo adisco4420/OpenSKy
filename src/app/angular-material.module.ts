@@ -19,9 +19,8 @@ import {
    MatTooltipModule,
    MatTableModule,
    MatPaginatorModule,
-   MatProgressSpinnerModule
 } from '@angular/material';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
    imports: [
       CommonModule,
