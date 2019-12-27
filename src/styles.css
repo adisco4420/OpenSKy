@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import 'https://material.angular.io/styles.2482741cbee49ee2d1cd.css'; */
 html,body{height:100%;margin:0;padding:0;}
 body{}
 .text-danger{
     color: rgb(228, 52, 52);
+}
+.text-center{
+    text-align: center;
+}
+.is-clickable{
+    cursor: pointer;
 }
